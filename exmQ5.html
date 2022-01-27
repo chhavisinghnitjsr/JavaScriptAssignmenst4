@@ -1,0 +1,45 @@
+<html>
+<head> 
+<style type="text/css"> 
+    
+body {margin: 30px;} 
+</style>  
+<meta charset=utf-8 /> 
+<title>Remove items from a dropdown list</title> 
+</head><body>
+<form> 
+<p>
+<select id="colorSelect"> 
+    <option value="green">Green</option>
+    <option value="red">Red</option>
+ 
+</select> 
+</p>
+</form>
+
+    <input type = "button" onclick="removeColor()" value="Select and Remove">
+    <input type = "button" onclick="addColor()" value="Select and add">
+
+    <script>
+        function removeColor()
+        {
+            var x = document.getElementById("colorSelect");
+            x.remove(x.selectedIndex);
+            //add "New option added"
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+        function addColor() {
+            //let val = document.getElementById("colorSelect").value = "Color";
+            optionText = 'newColorAdded';
+            optionValue = 'val';
+            $('#colorSelect').append(new Option(optionText, optionValue));
+        }
+    </script>
+
+</form>
+</body>
+</html>
